@@ -40,18 +40,21 @@ window.addEventListener("scroll", () => {
   saluteImgContainer.style.transform = `translate(${offsetY * 0.2}px,${
     offsetY * 0.6
   }px)`;
-  authorName.style.transform = `translateX(${offsetY * 0.1}px)`;
+  const screenWidth = window.innerWidth
+  if(screenWidth > 1024){
+    authorName.style.transform = `translateX(${offsetY * 0.1}px)`;
+  }
+  else{
+    authorName.style.transform = `none`;
+
+  }
   jobTitleContainer[0].style.backgroundPositionY = `${offsetY * 0.5}px`;
   jobTitleContainer[1].style.backgroundPositionY = `${-offsetY * 0.2}px`;
   jobTitle[0].style.transform = `translateX(calc(200vh - ${offsetY}px))`;
   jobTitle[1].style.transform = `translateX(calc(-300vh + ${offsetY}px))`;
   projectTitle.style.transform = `translateY(calc(400vh - ${offsetY}px))`
   phone[0].style.transform = `translateX(calc(500vh - ${offsetY}px))`
+  phone[1].style.transform = `translateX(calc(760vh - ${offsetY}px))`
   laptop[0].style.transform = `translateX(calc(-600vh + ${offsetY}px))`
 
-  // if(offsetY > 500){
-  // }else{
-  //   saluteImgContainer.style.transform = `translateX(0px)`
-  // }
-  
 });

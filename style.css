@@ -7,12 +7,15 @@
 html {
   overflow-x: hidden;
 }
+body {
+  overflow-x: hidden;
+}
 html::-webkit-scrollbar {
   display: block;
   width: 10px;
   background-color: #111;
 }
-html::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb {
   background-color: #555;
 }
 .container {
@@ -218,4 +221,50 @@ img {
 }
 .githubChart:hover .active:nth-child(2n) {
   background-color: #063f24;
+}
+.githubSm {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .project {
+    flex-direction: column;
+    height: max-content;
+  }
+  .projects {
+    padding: 0 30px;
+  }
+  .laptop,.laptopImg{
+    width: 310px;
+    height: 192px;
+    flex:0
+  }
+  .laptopScreen{
+    width: 232px;
+    height: 142px;
+    left: 36px;
+    top: 10px;
+  }
+  .project:nth-child(2n) {
+    flex-direction: column;
+  }
+  .phone,
+  .laptop {
+    transform: none !important;
+  }
+  .githubChart {
+    display: none;
+  }
+  .githubTitle {
+    font-size: 10vw;
+    text-align: center;
+  }
+  .githubSm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #555;
+    font-size: 30px;
+    text-align: center;
+  }
 }
